@@ -7,10 +7,8 @@ services:
                         - 27015:27015/udp
                 stdin_open: true
                 tty: true
-                entrypoint:
-                        - /bin/bash
-                entrypoint: hlds_linux
-                command: -game czero +port 27015 +maxplayers 32 +map aa_dima2 
+                entrypoint: ["hlds_linux"]
+                command: ["-game", "czero", "+port", "27015", "+maxplayers", "32", "+map", "aa_dima2"]
                 volumes:
                         - ./maps/aa_dima2.bsp:/server/czero/maps/aa_dima2.bsp
                         - ./maps/aa_dima2.res:/server/czero/maps/aa_dima2.res
