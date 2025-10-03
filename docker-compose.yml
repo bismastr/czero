@@ -10,8 +10,6 @@ services:
                 entrypoint: ["hlds_linux"]
                 command: ["-game", "czero", "+port", "27015", "+maxplayers", "32", "+map", "aa_dima2"]
                 volumes:
-                        - ./maps/aa_dima2.bsp:/server/czero/maps/aa_dima2.bsp
-                        - ./maps/aa_dima2.res:/server/czero/maps/aa_dima2.res
-                        - ./maps/aa_dima2.txt:/server/czero/maps/aa_dima2.txt
+                        - ./maps:/server/czero/maps
                         - ./config/server.cfg:/server/czero/server.cfg
                         - ./config/mapcycle.txt:/server/czero/mapcycle.txt
